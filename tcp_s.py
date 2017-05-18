@@ -17,7 +17,7 @@ def handle_client(client_socket):
 
 	#print info from the client
 	request = client_socket.recv(1024)
-	print 'Received {}'.format(request)
+	print ('Received {}'.format(request))
 
 	#sending back
 	client_socket.send('hello!')
@@ -27,7 +27,7 @@ def handle_client(client_socket):
 while True:
 	client, addr = server.accept()
 
-	print 'Connected to {}:{}'.format(addr[0], addr[1])
+	print ('Connected to {}:{}'.format(addr[0], addr[1]))
 
 	#create client thread to handle incoming data
 	cilent_handler = threading.Thread(target=handle_client, args=(client,))
